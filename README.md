@@ -67,4 +67,4 @@ The code will generate a data-frame like the following one:
 ```
 
 The plot will look like this:
-![alt text](https://github.com/RicardoEGFSilva/OMIEData_Oct25/tree/dev/images/PricesPT_1Oct25.png)
+![alt text](images/PricesPT_1Oct25.png)
