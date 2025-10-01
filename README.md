@@ -35,8 +35,8 @@ A very simple example to download the hourly electricity prices for a given date
 import datetime as dt
 import matplotlib.pyplot as plt
 
-from OMIEData.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
-from OMIEData.Enums.all_enums import DataTypeInMarginalPriceFile
+from OMIEData_Oct25.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
+from OMIEData_Oct25.Enums.all_enums import DataTypeInMarginalPriceFile
 
 # Set the wanted date.
 wantedDate = dt.datetime(2025, 10, 1)
