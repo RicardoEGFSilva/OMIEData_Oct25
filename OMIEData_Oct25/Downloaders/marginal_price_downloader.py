@@ -1,5 +1,5 @@
 
-from OMIEData.Downloaders.general_omie_downloader import GeneralOMIEDownloader
+from OMIEData_Oct25.Downloaders.general_omie_downloader import GeneralOMIEDownloader
 
 
 class MarginalPriceDownloader(GeneralOMIEDownloader):

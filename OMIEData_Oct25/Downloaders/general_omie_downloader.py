@@ -1,7 +1,7 @@
 
 import requests as req
 import datetime as dt
-from OMIEData.Downloaders.omie_downloader import OMIEDownloader
+from OMIEData_Oct25.Downloaders.omie_downloader import OMIEDownloader
 
 
 class GeneralOMIEDownloader(OMIEDownloader):

@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="OMIEData_Oct25",
-    version="0.0.0.1",
+    version="0.0.0.2",
     author="Ricardo Silva (Fork) | Alberto Cruz and Mirel Mora (Original)",
     author_email="ricardo.emanuel@inesctec.pt | a.cruz.garcia@gmail.com, mirel.mora@gmail.com",
     description="Package to download marginal prices from https://www.omie.es/.",

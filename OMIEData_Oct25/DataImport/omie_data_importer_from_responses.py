@@ -1,9 +1,9 @@
 import pandas as pd
 import datetime as dt
 
-from OMIEData.DataImport.omie_data_importer import OMIEDataImporter
-from OMIEData.FileReaders.omie_file_reader import OMIEFileReader
-from OMIEData.Downloaders.omie_downloader import OMIEDownloader
+from OMIEData_Oct25.DataImport.omie_data_importer import OMIEDataImporter
+from OMIEData_Oct25.FileReaders.omie_file_reader import OMIEFileReader
+from OMIEData_Oct25.Downloaders.omie_downloader import OMIEDownloader
 
 
 class OMIEDataImporterFromResponses(OMIEDataImporter):

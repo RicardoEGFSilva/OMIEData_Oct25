@@ -2,7 +2,7 @@ import datetime as dt
 import pandas as pd
 import numpy as np
 
-from OMIEData.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
+from OMIEData_Oct25.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
 
 
 def test_marginal_price_downloader_after_october25_24h():

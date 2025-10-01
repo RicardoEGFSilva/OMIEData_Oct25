@@ -1,12 +1,12 @@
 # This is a sample Python script.
 import datetime as dt
-from OMIEData.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
+from OMIEData_Oct25.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
 
 
 if __name__ == '__main__':
 
     import matplotlib.pyplot as plt
-    from OMIEData.Enums.all_enums import DataTypeInMarginalPriceFile
+    from OMIEData_Oct25.Enums.all_enums import DataTypeInMarginalPriceFile
 
     # Set the wanted date.
     wantedDate = dt.datetime(2025, 9, 30)

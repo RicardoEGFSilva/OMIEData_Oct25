@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 
 from requests import Response
-from OMIEData.Enums.all_enums import DataTypeInMarginalPriceFile
-from OMIEData.FileReaders.omie_file_reader import OMIEFileReader
+from OMIEData_Oct25.Enums.all_enums import DataTypeInMarginalPriceFile
+from OMIEData_Oct25.FileReaders.omie_file_reader import OMIEFileReader
 
 
 class MarginalPriceFileReader(OMIEFileReader):

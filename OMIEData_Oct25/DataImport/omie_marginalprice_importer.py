@@ -1,8 +1,8 @@
 import datetime as dt
 
-from OMIEData.DataImport.omie_data_importer_from_responses import OMIEDataImporterFromResponses
-from OMIEData.Downloaders.marginal_price_downloader import MarginalPriceDownloader
-from OMIEData.FileReaders.marginal_price_file_reader import MarginalPriceFileReader
+from OMIEData_Oct25.DataImport.omie_data_importer_from_responses import OMIEDataImporterFromResponses
+from OMIEData_Oct25.Downloaders.marginal_price_downloader import MarginalPriceDownloader
+from OMIEData_Oct25.FileReaders.marginal_price_file_reader import MarginalPriceFileReader
 
 
 class OMIEMarginalPriceFileImporter(OMIEDataImporterFromResponses):
