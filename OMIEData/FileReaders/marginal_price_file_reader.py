@@ -73,9 +73,9 @@ class MarginalPriceFileReader(OMIEFileReader):
 
         res = pd.DataFrame(columns=self.get_keys())
 
-        # from the first line we get the units and the price date. We just look at the date
+        # From the first line we get the units and the price date. We just look at the date.
         lines = response.text.split("\n")
-        matches = re.findall('\d\d/\d\d/\d\d\d\d', lines.pop(0))
+        matches = re.findall(r'\d\d/\d\d/\d\d\d\d', lines.pop(0))
         if not (len(matches) == 2):
             print('Response ' + response.url + ' does not have the expected format.')
             raise BaseException
@@ -87,7 +87,7 @@ class MarginalPriceFileReader(OMIEFileReader):
 
             while lines:
 
-                # read following line
+                # read the following line
                 line = lines.pop(0)
                 splits = line.split(sep=';')
                 first_col = splits[0]
@@ -109,9 +109,9 @@ class MarginalPriceFileReader(OMIEFileReader):
         res = pd.DataFrame(columns=self.get_keys())
         file = open(filename, 'r', encoding='latin-1')
 
-        # from first line we get the units and the price date. We just look at the date
+        # From the first line we get the units and the price date. We just look at the date.
         line = file.readline()
-        matches = re.findall('\d\d/\d\d/\d\d\d\d', line)
+        matches = re.findall(r'\d\d/\d\d/\d\d\d\d', line)
         if not (len(matches) == 2):
             print('File ' + filename + ' does not have the expected format.')
             raise FileNotFoundError
