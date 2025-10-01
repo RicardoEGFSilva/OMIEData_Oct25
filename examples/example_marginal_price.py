@@ -8,8 +8,8 @@ if __name__ == '__main__':
     import matplotlib.pyplot as plt
     from OMIEData.Enums.all_enums import DataTypeInMarginalPriceFile
 
-    # Set the wanted date, from 2025-10-01 onwards.
-    wantedDate = dt.datetime(2025, 10, 1)
+    # Set the wanted date.
+    wantedDate = dt.datetime(2025, 9, 30)
 
     # This can take time for longer date spans, since it is downloading the files from the website.
     df = OMIEMarginalPriceFileImporter(date_ini=wantedDate, date_end=wantedDate).read_to_dataframe(verbose=True)

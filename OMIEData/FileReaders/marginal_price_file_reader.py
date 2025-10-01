@@ -24,15 +24,8 @@ class MarginalPriceFileReader(OMIEFileReader):
         'Precio marginal en el sistema portugués (Cent/kWh)':
             [DataTypeInMarginalPriceFile.PRICE_PORTUGAL, 10.0],
         'Precio marginal en el sistema portugués (EUR/MWh)':
-            [DataTypeInMarginalPriceFile.PRICE_PORTUGAL, 1.0],
-        'Demanda+bombeos (MWh)':
-            [DataTypeInMarginalPriceFile.ENERGY_IBERIAN, 1.0],
-        'Energía en el programa resultante de la casación (MWh)':
-            [DataTypeInMarginalPriceFile.ENERGY_IBERIAN, 1.0],
-        'Energía total del mercado Ibérico (MWh)':
-            [DataTypeInMarginalPriceFile.ENERGY_IBERIAN, 1.0],
-        'Energía total con bilaterales del mercado Ibérico (MWh)':
-            [DataTypeInMarginalPriceFile.ENERGY_IBERIAN_WITH_BILLATERAL, 1.0]}
+            [DataTypeInMarginalPriceFile.PRICE_PORTUGAL, 1.0]
+    }
 
     # List to use before 1/10/2025
     __key_list_retrieve_before__ = ['DATE', 'CONCEPT',
@@ -99,40 +92,10 @@ class MarginalPriceFileReader(OMIEFileReader):
                         units = MarginalPriceFileReader.__dic_static_concepts__[first_col][1]
 
                         dico = self._process_line(date=date, concept=concept_type, values=splits[1:], multiplier=units)
-                        res = pd.concat([res, pd.DataFrame([dico])], ignore_index=True)
-
-            return res
-
-    def get_data_from_file(self, filename: str) -> pd.DataFrame:
-
-        # Method yield each dictionary one by one
-        res = pd.DataFrame(columns=self.get_keys())
-        file = open(filename, 'r', encoding='latin-1')
-
-        # From the first line we get the units and the price date. We just look at the date.
-        line = file.readline()
-        matches = re.findall(r'\d\d/\d\d/\d\d\d\d', line)
-        if not (len(matches) == 2):
-            print('File ' + filename + ' does not have the expected format.')
-            raise FileNotFoundError
-        else:
-            # The second date is the one we want
-            date = dt.datetime.strptime(matches[1], MarginalPriceFileReader.__dateFormatInFile__).date()
-
-            # Process all the lines
-            while line:
-                # read the following line
-                line = file.readline()
-                splits = line.split(sep=';')
-                first_col = splits[0]
-
-                if first_col in MarginalPriceFileReader.__dic_static_concepts__.keys():
-                    concept_type = MarginalPriceFileReader.__dic_static_concepts__[first_col][0]
-
-                    if concept_type in self.conceptsToLoad:
-                        units = MarginalPriceFileReader.__dic_static_concepts__[first_col][1]
-                        dico = self._process_line(date=date, concept=concept_type, values=splits[1:], multiplier=units)
-                        res = pd.concat([res, pd.DataFrame([dico])], ignore_index=True)
+                        if res.empty:
+                            res = pd.DataFrame([dico])
+                        else:
+                            res = pd.concat([res, pd.DataFrame([dico])], ignore_index=True)
 
             return res
 

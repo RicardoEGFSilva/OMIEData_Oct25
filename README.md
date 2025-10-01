@@ -8,6 +8,7 @@ Since October 2025, the original package OMIEData from which this is forked has 
 daily market prices since the data source changed from hourly to a quarter-hourly format. 
 This fork, OMIEData_Oct25, is adapted to the new data source and structure, although being only  
 adapted to download the OMIE marginal prices. Other functionalities will not be added in the future.
+Prices can be obtained for any date, even before October 2025, although with the corresponding output structure.
 Note: OMIE (Iberian Peninsula's Electricity Market Operator): https://www.omie.es/
 
 Concretely, you can easily access to data for the following markets:
@@ -37,7 +38,7 @@ import matplotlib.pyplot as plt
 from OMIEData.DataImport.omie_marginalprice_importer import OMIEMarginalPriceFileImporter
 from OMIEData.Enums.all_enums import DataTypeInMarginalPriceFile
 
-# Set the wanted date, from 2025-10-01 onwards.
+# Set the wanted date.
 wantedDate = dt.datetime(2025, 10, 1)
 
 # This can take time for longer date spans, since it is downloading the files from the website.

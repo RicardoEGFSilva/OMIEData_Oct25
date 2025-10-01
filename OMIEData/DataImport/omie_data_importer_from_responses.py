@@ -26,7 +26,11 @@ class OMIEDataImporterFromResponses(OMIEDataImporter):
                                                           date_end=self.date_end,
                                                           verbose=verbose):
             try:
-                df = pd.concat([df, self.fileReader.get_data_from_response(response=response)], ignore_index=True)
+                if df.empty:
+                    df = self.fileReader.get_data_from_response(response=response)
+                else:
+                    df = pd.concat([df, self.fileReader.get_data_from_response(response=response)],
+                                   ignore_index=True)
 
             except Exception as exc:
                 print('There was error processing file: ' + response.url)

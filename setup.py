@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.0.1",
     author="Ricardo Silva (Fork) | Alberto Cruz and Mirel Mora (Original)",
     author_email="ricardo.emanuel@inesctec.pt | a.cruz.garcia@gmail.com, mirel.mora@gmail.com",
-    description="Package to download marginal prices from https://www.omie.es/ from October 2025 onwards",
+    description="Package to download marginal prices from https://www.omie.es/.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/RicardoEGFSilva/OMIEData_Oct25",
@@ -21,4 +21,7 @@ setuptools.setup(
     python_requires=">=3.10",
     keywords=["OMIE", "Electricity prices"],
     install_requires=["pandas>=2.0.1", "requests", "datetime", "babel"],
+    extras_require={
+        'test': ['pytest>=8.4.1']
+    }
 )
