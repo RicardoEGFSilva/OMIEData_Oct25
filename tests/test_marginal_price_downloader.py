@@ -7,13 +7,13 @@ from OMIEData_Oct25.DataImport.omie_marginalprice_importer import OMIEMarginalPr
 
 def test_marginal_price_downloader_after_october25_24h():
     # Set the wanted date.
-    wantedDate = dt.datetime(2025, 10, 1)
+    wantedDate = dt.date(2025, 10, 1)
 
     # This can take time for longer date spans, since it is downloading the files from the website.
     df = OMIEMarginalPriceFileImporter(date_ini=wantedDate, date_end=wantedDate).read_to_dataframe(verbose=True)
     wantedDf = pd.DataFrame([
         {
-            'DATE': wantedDate.date(),  'CONCEPT': 'PRICE_SP',
+            'DATE': wantedDate,  'CONCEPT': 'PRICE_SP',
             'H1Q1': 105.1,      'H1Q2': 104.24,     'H1Q3': 102.28,     'H1Q4': 102.0,
             'H2Q1': 106.63,     'H2Q2': 105.68,     'H2Q3': 105.19,     'H2Q4': 105.01,
             'H3Q1': 104.21,     'H3Q2': 102.0,      'H3Q3': 100.0,      'H3Q4': 100.0,
@@ -41,7 +41,7 @@ def test_marginal_price_downloader_after_october25_24h():
             'H25Q1': np.nan,    'H25Q2': np.nan,    'H25Q3': np.nan,    'H25Q4': np.nan
         },
         {
-            'DATE': wantedDate.date(),  'CONCEPT': 'PRICE_PT',
+            'DATE': wantedDate,  'CONCEPT': 'PRICE_PT',
             'H1Q1': 105.1,      'H1Q2': 104.24,     'H1Q3': 102.28,     'H1Q4': 102.0,
             'H2Q1': 106.63,     'H2Q2': 105.68,     'H2Q3': 105.19,     'H2Q4': 105.01,
             'H3Q1': 104.21,     'H3Q2': 102.0,      'H3Q3': 100.0,      'H3Q4': 100.0,
@@ -84,13 +84,13 @@ def test_marginal_price_downloader_after_october25_25h():
 
 def test_marginal_price_downloader_before_october25_24h():
     # Set the wanted date.
-    wantedDate = dt.datetime(2025, 9, 30)
+    wantedDate = dt.date(2025, 9, 30)
 
     # This can take time for longer date spans, since it is downloading the files from the website.
     df = OMIEMarginalPriceFileImporter(date_ini=wantedDate, date_end=wantedDate).read_to_dataframe(verbose=True)
     wantedDf = pd.DataFrame([
         {
-            'DATE': wantedDate.date(),  'CONCEPT': 'PRICE_SP',
+            'DATE': wantedDate,  'CONCEPT': 'PRICE_SP',
             'H1': 95.46,    'H2': 88.25,    'H3': 80.0,     'H4': 76.43,
             'H5': 78.0,     'H6': 80.0,     'H7': 97.11,    'H8': 105.68,
             'H9': 120.0,    'H10': 93.97,   'H11': 60.1,    'H12': 31.0,
@@ -100,7 +100,7 @@ def test_marginal_price_downloader_before_october25_24h():
             'H25': np.nan
         },
         {
-            'DATE': wantedDate.date(),  'CONCEPT': 'PRICE_PT',
+            'DATE': wantedDate,  'CONCEPT': 'PRICE_PT',
             'H1': 95.46,    'H2': 88.25,    'H3': 80.0,     'H4': 76.43,
             'H5': 78.0,     'H6': 80.0,     'H7': 97.11,    'H8': 105.68,
             'H9': 120.0,    'H10': 93.97,   'H11': 60.1,    'H12': 31.0,
@@ -115,13 +115,13 @@ def test_marginal_price_downloader_before_october25_24h():
 
 def test_marginal_price_downloader_before_october25_23h():
     # Set the wanted date.
-    wantedDate = dt.datetime(2024, 3, 31)
+    wantedDate = dt.date(2024, 3, 31)
 
     # This can take time for longer date spans, since it is downloading the files from the website.
     df = OMIEMarginalPriceFileImporter(date_ini=wantedDate, date_end=wantedDate).read_to_dataframe(verbose=True)
     wantedDf = pd.DataFrame([
         {
-            'DATE': wantedDate.date(),  'CONCEPT': 'PRICE_SP',
+            'DATE': wantedDate,  'CONCEPT': 'PRICE_SP',
             'H1': 3.2,      'H2': 1.63,     'H3': 0.5,      'H4': 0.5,
             'H5': 0.5,      'H6': 0.6,      'H7': 0.5,      'H8': 0.6,
             'H9': 0.5,      'H10': 0.5,     'H11': 0.4,     'H12': 0.0,
@@ -131,7 +131,7 @@ def test_marginal_price_downloader_before_october25_23h():
             'H25': np.nan
         },
         {
-            'DATE': wantedDate.date(),  'CONCEPT': 'PRICE_PT',
+            'DATE': wantedDate,  'CONCEPT': 'PRICE_PT',
             'H1': 3.2,      'H2': 1.63,     'H3': 0.5,      'H4': 0.5,
             'H5': 0.5,      'H6': 0.6,      'H7': 0.5,      'H8': 0.6,
             'H9': 0.5,      'H10': 0.5,     'H11': 0.4,     'H12': 0.0,
@@ -146,13 +146,13 @@ def test_marginal_price_downloader_before_october25_23h():
 
 def test_marginal_price_downloader_before_october25_25h():
     # Set the wanted date.
-    wantedDate = dt.datetime(2024, 10, 27)
+    wantedDate = dt.date(2024, 10, 27)
 
     # This can take time for longer date spans, since it is downloading the files from the website.
     df = OMIEMarginalPriceFileImporter(date_ini=wantedDate, date_end=wantedDate).read_to_dataframe(verbose=True)
     wantedDf = pd.DataFrame([
         {
-            'DATE': wantedDate.date(), 'CONCEPT': 'PRICE_SP',
+            'DATE': wantedDate, 'CONCEPT': 'PRICE_SP',
             'H1': 87.71,    'H2': 83.31,    'H3': 82.23,    'H4': 80.68,
             'H5': 81.3,     'H6': 80.68,    'H7': 70.0,     'H8': 80.0,
             'H9': 86.24,    'H10': 81.3,    'H11': 64.36,   'H12': 54.72,
@@ -162,7 +162,7 @@ def test_marginal_price_downloader_before_october25_25h():
             'H25': 102.99
         },
         {
-            'DATE': wantedDate.date(), 'CONCEPT': 'PRICE_PT',
+            'DATE': wantedDate, 'CONCEPT': 'PRICE_PT',
             'H1': 87.71,    'H2': 83.31,    'H3': 82.23,    'H4': 80.68,
             'H5': 81.3,     'H6': 80.68,    'H7': 70.0,     'H8': 80.0,
             'H9': 86.24,    'H10': 81.3,    'H11': 64.36,   'H12': 54.72,

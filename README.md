@@ -39,7 +39,7 @@ from OMIEData_Oct25.DataImport.omie_marginalprice_importer import OMIEMarginalPr
 from OMIEData_Oct25.Enums.all_enums import DataTypeInMarginalPriceFile
 
 # Set the wanted date.
-wantedDate = dt.datetime(2025, 10, 1)
+wantedDate = dt.date(2025, 10, 1)
 
 # This can take time for longer date spans, since it is downloading the files from the website.
 df = OMIEMarginalPriceFileImporter(date_ini=wantedDate, date_end=wantedDate).read_to_dataframe(verbose=True)
