@@ -4,10 +4,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="OMIEData",
-    version="0.4.0.0",
-    author="Alberto Cruz and Mirel Mora",
-    author_email="a.cruz.garcia@gmail.com, mirel.mora@gmail.com",
+    name="OMIEData_Oct25",
+    version="0.0.0.1",
+    author="Ricardo Silva (Fork) | Alberto Cruz and Mirel Mora (Original)",
+    author_email="ricardo.emanuel@inesctec.pt | a.cruz.garcia@gmail.com, mirel.mora@gmail.com",
     description="Package to download electricity time series from https://www.omie.es/",
     long_description=long_description,
     long_description_content_type="text/markdown",

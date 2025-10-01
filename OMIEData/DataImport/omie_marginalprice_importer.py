@@ -9,7 +9,8 @@ class OMIEMarginalPriceFileImporter(OMIEDataImporterFromResponses):
 
     def __init__(self, date_ini: dt.date, date_end: dt.date):
 
+        flag = date_ini >= dt.datetime(2025, 10, 1)
         super().__init__(date_ini=date_ini,
                          date_end=date_end,
                          file_downloader=MarginalPriceDownloader(),
-                         file_reader=MarginalPriceFileReader())
+                         file_reader=MarginalPriceFileReader(after_october_2025=flag))
